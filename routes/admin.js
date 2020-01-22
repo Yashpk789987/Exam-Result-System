@@ -37,7 +37,6 @@ router.post('/checkLogin', function(req, res) {
 });
 
 router.all('/*', function(req, res, next) {
-  console.log('Home....');
   if (req.session.admin != undefined) {
     next();
   } else {
@@ -46,7 +45,6 @@ router.all('/*', function(req, res, next) {
 });
 
 router.get('/home', function(req, res) {
-  console.log(req.session.admin);
   res.render('admin/home');
 });
 
