@@ -35,4 +35,13 @@ router.get('/all', function(req, res) {
   });
 });
 
+router.get('/delete/:id', function(req, res) {
+  let id = req.params.id;
+  let query = `delete from teachers where _id = ${id}`;
+  pool.query(query, function(err, result) {
+    if (err) throw err;
+    res.redirect('/teacher/all');
+  });
+});
+
 module.exports = router;

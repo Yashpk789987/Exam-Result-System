@@ -118,6 +118,8 @@
             <th scope="col">Teacher Name</th>
             <th scope="col">Email</th>
             <th scope="col">Mobile </th>
+            <th scope="col">Edit </th>
+            <th scope="col">Delete </th>
           </tr>
         </thead>
         <tbody>
@@ -127,6 +129,9 @@
             <td><%=item.name%></td>
             <td><%=item.email%></td>
             <td><%=item.mobile%></td>
+            <td><a href="/teacher/update/<%=item._id%>" class="btn btn-warning" > Edit </a></td>
+            <td><a href="/teacher/delete/<%=item._id%>" class="btn btn-danger" > Delete </a></td>
+            
           </tr>
           <% })%>  
         </tbody>

@@ -17,14 +17,15 @@ router.post('/checkLogin', function(req, res) {
   let data = req.body;
   let email_mobile = data.email_mobile;
   let password = data.password;
-  let query =
-    "select * from admin where (email = '" +
-    email_mobile +
-    "' or mobile = '" +
-    email_mobile +
-    "') and password = '" +
-    password +
-    "'";
+  // let query =
+  //   "select * from admin where (email = '" +
+  //   email_mobile +
+  //   "' or mobile = '" +
+  //   email_mobile +
+  //   "') and password = '" +
+  //   password +
+  //   "'";
+  let query = `select * from admin where (email = '${email_mobile}' or mobile = '${email_mobile}') and password = '${password}'`;
   pool.query(query, function(err, result) {
     if (err) throw err;
     if (result.length === 0) {
@@ -54,6 +55,3 @@ router.get('/logout', function(req, res) {
 });
 
 module.exports = router;
-
-// $email = $_POST['email_mobile']   // PHP
-// String email = request.getParameter('email_mobile')  /// JAVA
