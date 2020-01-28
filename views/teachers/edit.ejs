@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css"  >
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item dropdown active">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Teachers
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item active" href="/teacher/create">Add New Teacher</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/teacher/all">Show All Teachers</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Edit Teacher</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Delete Teacher</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Classes
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Add Class</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Show All Classes</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Edit Class / Assign Teacher</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Remove Class</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Exams
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Create New Exam</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Show All Exams </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Edit Exam</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Remove Exam</a>
+            </div>
+          </li>
+         
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+    <div class="container" >
+      <div class="col-md-6">
+          <div class="card mt-4">
+              <div class="card-header">
+                  <b>Add Teacher Details</b>
+              </div>
+              <form action='/teacher/update' method='post'>
+                  <input type="text" name="_id" value="<%=teacher._id%>"  hidden>
+                  <div class="card-body register">
+                      <p class="card-text"><b>Please fill teacher details here</b></p>
+                      <div class="form-group">
+                          <label for="formGroupExampleInput">Teacher Name </label>
+                          <input value = "<%=teacher.name%>" type="text" required class = "form-control" name="name" placeholder="Teacher Name">
+                      </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Email </label>
+                        <input value = "<%=teacher.email%>" type="email" required class = "form-control" name="email" placeholder="Email">
+                      </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Mobile No. </label>
+                        <input value = "<%=teacher.mobile%>" type="text" required class = "form-control" name="mobile" placeholder="Mobile No. ">
+                      </div>
+                      <div class="form-group">
+                        <label for="formGroupExampleInput">Password </label>
+                        <input value = "<%=teacher.password%>" type="password" required class = "form-control" name="password" placeholder="Password">
+                      </div>
+                      <div class="form-group">
+                        <input type="submit" value="Update" style = "width : 100%" class="btn btn-primary" >
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+  </body>
+</html>
+<script src="/javascripts/jquery.js"></script>
+<script src="/javascripts/bootstrap.js"></script>
+<script src=/javascripts/popper.js"></script>

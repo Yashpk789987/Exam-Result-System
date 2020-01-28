@@ -44,4 +44,22 @@ router.get('/delete/:id', function(req, res) {
   });
 });
 
+router.get('/update/:id', function(req, res) {
+  let id = req.params.id;
+  let query = `select * from teachers where _id = ${id}`;
+  pool.query(query, function(err, result) {
+    if (err) throw err;
+    res.render('teachers/edit', { teacher: result[0] });
+  });
+});
+
+router.post('/update', function(req, res) {
+  let { _id, name, email, mobile, password } = req.body;
+  let query = `update teachers set name = '${name}' , email = '${email}' , mobile = '${mobile}' , password = '${password}' where _id = ${_id}`;
+  pool.query(query, function(err, result) {
+    if (err) throw err;
+    res.redirect('/teacher/all');
+  });
+});
+
 module.exports = router;
