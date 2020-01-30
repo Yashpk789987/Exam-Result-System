@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="/stylesheets/bootstrap.css"  >
+    <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
     <title>Document</title>
   </head>
   <body>
@@ -42,7 +42,9 @@
               Teachers
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item active" href="/teacher/create">Add New Teacher</a>
+              <a class="dropdown-item active" href="/teacher/create"
+                >Add New Teacher</a
+              >
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/teacher/all">Show All Teachers</a>
               <div class="dropdown-divider"></div>
@@ -95,7 +97,6 @@
               <a class="dropdown-item" href="#">Remove Exam</a>
             </div>
           </li>
-         
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input
@@ -110,41 +111,85 @@
         </form>
       </div>
     </nav>
-    <div class="container" >
+    <div class="container">
       <div class="col-md-6">
-          <div class="card mt-4">
-              <div class="card-header">
-                  <b>Add Teacher Details</b>
-              </div>
-              <form action='/teacher/create' method='post'>
-                  <div class="card-body register">
-                      <p class="card-text"><b>Please fill teacher details here</b></p>
-                      <div class="form-group">
-                          <label for="formGroupExampleInput">Teacher Name </label>
-                          <input type="text" required class = "form-control" name="name" placeholder="Teacher Name">
-                      </div>
-                      <div class="form-group">
-                        <label for="formGroupExampleInput">Email </label>
-                        <input type="email" required class = "form-control" name="email" placeholder="Email">
-                      </div>
-                      <div class="form-group">
-                        <label for="formGroupExampleInput">Mobile No. </label>
-                        <input type="text" required class = "form-control" name="mobile" placeholder="Mobile No. ">
-                      </div>
-                      <div class="form-group">
-                        <label for="formGroupExampleInput">Password </label>
-                        <input type="password" required class = "form-control" name="password" placeholder="Password">
-                      </div>
-                      <div class="form-group">
-                        <input type="submit" style = "width : 100%" class="btn btn-primary" >
-                      </div>
-                  </div>
-              </form>
+        <div class="card mt-4">
+          <div class="card-header">
+            <b>Add Teacher Details</b>
           </div>
+          <form id="form" action="/teacher/create" method="post">
+            <div class="card-body register">
+              <p class="card-text"><b>Please fill teacher details here</b></p>
+              <div class="form-group">
+                <label for="formGroupExampleInput">Teacher Name </label>
+                <input
+                  type="text"
+                  required
+                  class="form-control"
+                  name="name"
+                  placeholder="Teacher Name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput">Email </label>
+                <input
+                  id="email"
+                  type="email"
+                  required
+                  class="form-control"
+                  name="email"
+                  placeholder="Email"
+                />
+              </div>
+              <div id="emailbox"></div>
+              <div class="form-group">
+                <label for="formGroupExampleInput">Mobile No. </label>
+                <input
+                  type="text"
+                  required
+                  class="form-control"
+                  name="mobile"
+                  placeholder="Mobile No. "
+                />
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput">Password </label>
+                <input
+                  type="password"
+                  required
+                  class="form-control"
+                  id="password"
+                  name="password"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="form-group">
+                <label for="formGroupExampleInput">Confirm Password </label>
+                <input
+                  type="password"
+                  required
+                  class="form-control"
+                  id="confirm_password"
+                  placeholder="Confirm Password"
+                />
+              </div>
+              <div id="mybox"></div>
+              <div class="form-group">
+                <input
+                  type="submit"
+                  style="width : 100%"
+                  class="btn btn-primary"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-  </div>
+    </div>
   </body>
 </html>
 <script src="/javascripts/jquery.js"></script>
 <script src="/javascripts/bootstrap.js"></script>
-<script src=/javascripts/popper.js"></script>
+<script src="/javascripts/popper.js"></script>
+<!-- <script src="/javascripts/myjs/create_teacher_vanilla.js"></script> -->
+<script src="/javascripts/myjs/create_teacher.js"></script>

@@ -10,6 +10,14 @@ var pool = mysql.createPool({
   database: 'exam_result_system'
 });
 
+router.get('/allemailRest', function(req, res) {
+  let query = `select email from teachers`;
+  pool.query(query, function(err, result) {
+    if (err) throw err;
+    res.json(result);
+  });
+});
+
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
